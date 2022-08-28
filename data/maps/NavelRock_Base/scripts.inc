@@ -15,7 +15,7 @@ NavelRock_Base_EventScript_HideLugia::
 	return
 
 NavelRock_Base_EventScript_TryShowLugia::
-	goto_if_set FLAG_LUGIA_FLEW_AWAY, EventScript_Return
+	goto_if_set FLAG_LUGIA_FLEW_AWAY, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_LUGIA
 	return
 
@@ -25,7 +25,7 @@ NavelRock_Base_OnResume::
 
 NavelRock_Base_EventScript_TryRemoveLugia::
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Return
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
 	removeobject LOCALID_LUGIA
 	return
 

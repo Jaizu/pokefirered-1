@@ -1129,7 +1129,7 @@ EventScript_BagItemCanBeRegistered::
 	msgbox Text_BagItemCanBeRegistered, MSGBOX_SIGN
 	end
 
-EventScript_Return::
+Common_EventScript_NopReturn::
 	return
 
 EventScript_SetResultTrue::
@@ -1302,7 +1302,7 @@ EventScript_BufferPutAwayPocketBerryPouch::
 	.include "data/scripts/static_pokemon.inc"
 
 EventScript_TryDarkenRuins::
-	goto_if_set FLAG_SYS_UNLOCKED_TANOBY_RUINS, EventScript_Return
+	goto_if_set FLAG_SYS_UNLOCKED_TANOBY_RUINS, Common_EventScript_NopReturn
 	setweather WEATHER_SHADE
 	doweather
 	return
